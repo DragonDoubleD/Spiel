@@ -1,7 +1,7 @@
-import 'phaser'
+import Phaser from 'phaser'
 
-//import GameOverScene from './scenes/gameOverScene';
-//import ShooterScene from './scenes/shooterScene';
+import GameOverScene from './scenes/gameOverScene';
+import GameScene from './scenes/GameScene';
 import WelcomeScene from './scenes/welcomeScene';
 
 
@@ -13,14 +13,14 @@ const config: Phaser.Types.Core.GameConfig = {
     parent: 'phaser-game',
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
-   
+
   },
-  scene: [WelcomeScene],
+  scene: [WelcomeScene, GameScene, GameOverScene],
   physics: {
     default: 'arcade',
   arcade: {
     gravity: { y: 300 },
-    debug: false
+    debug: true
 },
   },
 }
